@@ -19,7 +19,8 @@ Allow users to update already existing orders
 
 
 To view the application code:
-Click here https://github.com/NyamburyCollins/SpareParts-Ordering-System
+Click here https://nyamburycollins.github.io/SpareParts-Ordering-System/
+
 
 SetUp Instruction
 Requirements
@@ -33,7 +34,7 @@ Browser eg Chrome
 Getting Files
 To use this repo on your machine:
 
-git clone git@github.com:NyamburyCollins/SpareParts-Ordering-System.git
+git clone https://github.com/NyamburyCollins/SpareParts-Ordering-System
 
 Change directory to the repo folder:
 
