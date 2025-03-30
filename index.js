@@ -1,3 +1,20 @@
+// connect server.js
+const jsonServer = require('json-server');
+const server = jsonServer.create();
+const router = jsonServer.router('db.json');
+const middlewares = jsonServer.defaults();
+
+server.use(middlewares);
+server.use(router);
+server.listen(process.env.PORT || 3001, () => {
+
+  console.log('JSON Server is running');
+  server.use(middlewares);
+server.use(router);
+
+server.listen(port);
+
+});
 // Function to fetch products from the API
 
 async function fetchProducts() {
@@ -243,16 +260,4 @@ app.post('/api/register', async (req, res) => {
     } catch (error) {
         res.status(400).send('Error registering user: ' + error.message);
     }
-});
-const jsonServer = require('json-server');
-const server = jsonServer.create();
-const router = jsonServer.router('db.json');
-const middlewares = jsonServer.defaults();
-
-server.use(middlewares);
-server.use(router);
-server.listen(process.env.PORT || 3000, () => {
-
-  console.log('JSON Server is running');
-
 });
