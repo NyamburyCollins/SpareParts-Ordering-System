@@ -15,19 +15,14 @@ async function fetchProducts() {
     } catch (error) {
         console.error('Error fetching products:', error);
         document.getElementById('product-list').innerHTML = '<p>Failed to load products. Please try again later.</p>';
-
     }
 
 }
-
 // Function to display products in the product list
 
 function displayProducts(products) {
-
     const productList = document.getElementById('product-list');
-
     productList.innerHTML = ''; // Clear previous products
-
     products.forEach(product => {
         const productItem = document.createElement('div');
         productItem.className = 'product-item';
@@ -158,7 +153,6 @@ async function displayCart() {
     }
 }
 
-
 // Call displayCart when the page loads
 
 document.addEventListener('DOMContentLoaded', async () => {
@@ -200,3 +194,53 @@ async function calculateTotal(cartItems) {
     }
     return total;
 }
+document.getElementById('show-login').addEventListener('click', () => {
+    document.getElementById('registration-form').style.display = 'none';
+    document.querySelector('.form').style.display = 'block'; // Show login form
+});
+
+
+document.getElementById('login-button').addEventListener('click', () => {
+    document.getElementById('registration-form').style.display = 'none';
+    document.querySelector('.form').style.display = 'block'; // Show login form
+
+});
+document.getElementById('register-btn').addEventListener('click', async () => {
+    const email = document.getElementById('reg-email').value;
+    const password = document.getElementById('reg-password').value;
+
+    try {
+        const response = await fetch('/api/register', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ username: email, password: password }) // Adjust based on your API
+        });
+
+        if (!response.ok) {
+            throw new Error('Registration failed');
+        }
+
+        alert('Registration successful! You can now log in.');
+        document.getElementById('registration-form').style.display = 'none';
+        document.querySelector('.form').style.display = 'block'; // Show login form
+    } catch (error) {
+        console.error('Error during registration:', error);
+        alert('Registration failed. Please try again.');
+    }
+});
+//  (or your main backend file)
+
+const express = require('express');
+const app = express(); 
+app.post('/api/register', async (req, res) => {
+    const { username, password } = req.body;
+    const user = new User({ username, password });
+    try {
+        await user.save();
+        res.status(201).send('User  registered successfully');
+    } catch (error) {
+        res.status(400).send('Error registering user: ' + error.message);
+    }
+});

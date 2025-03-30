@@ -81,7 +81,17 @@
                 <h2>Login To Order</h2>
                 <input type="email" id="email" placeholder="Enter Email Here">
                 <input type="password" id="password" placeholder="Enter Password Here">
+
                 <button class="btnn" id="login-btn">Login</button>
+                <div class="form" id="registration-form" style="display: none;">
+                    <h2>Sign Up</h2>
+                    <input type="email" id="reg-email" placeholder="Enter Email Here" required> 
+                    <input type="password" id="reg-password" placeholder="Enter Password Here" required>
+                    <button class="btnn" id="register-btn">Sign Up</button>
+                    <p class="link">Already have an account?<br>
+                    <a href="#" id="show-login">Login Here</a></p>
+                </div>
+
                 <p class="link">Don't have an account?<br>
                 <a href="#">Sign up </a> Here</p>
                 <p class="liw">Log in with</p>
@@ -103,25 +113,9 @@
                 <a href="#"><ion-icon name="logo-skype"></ion-icon></a>
 
             </div>
-
         </div>
-
-
-        <main>
-
-            <section id="products">
-
-                <h2>Available Spare Parts</h2>
-
-                <div id="product-list"></div>
-
-            </section>
-
-        </main>
-
     </div>
     <script src="index.js"></script>
-
 </body>
 
 </html>

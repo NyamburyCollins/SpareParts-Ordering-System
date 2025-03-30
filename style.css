@@ -320,27 +320,20 @@ button:hover {
 }
 
 #cart {
-
     margin-top: 20px;
-
     padding: 20px;
-
     background-color: #fff;
-
     border-radius: 5px;
-
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 
 }
 
 #cart h2 {
     margin-bottom: 15px;
-
 }
 
 #cart-items {
     margin-bottom: 15px;
-
 }
 
 #checkout-button {
@@ -350,10 +343,38 @@ button:hover {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-
 }
 
 #checkout-button:hover {
     background-color: #0056b3;
+}
 
+.form {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form button:hover {
+    background-color: #0056b3;
 }
