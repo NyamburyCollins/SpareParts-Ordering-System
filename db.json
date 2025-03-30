@@ -1,0 +1,140 @@
+{
+    "parts": [
+      {
+        "id": 1,
+        "name": "Brake Pad",
+        "category": "Braking System",
+        "brand": "Brembo",
+        "price": 4500,
+        "stock": 120,
+        "car_compatibility": ["Toyota Corolla", "Honda Civic"]
+      },
+      {
+        "id": 2,
+        "name": "Air Filter",
+        "category": "Engine",
+        "brand": "Bosch",
+        "price": 1800,
+        "stock": 200,
+        "car_compatibility": ["Ford Focus", "Nissan Altima"]
+      },
+      {
+        "id": 3,
+        "name": "Spark Plug",
+        "category": "Ignition System",
+        "brand": "NGK",
+        "price": 1200,
+        "stock": 300,
+        "car_compatibility": ["Toyota Camry", "Honda Accord"]
+      },
+      {
+        "id": 4,
+        "name": "Oil Filter",
+        "category": "Engine",
+        "brand": "Mann Filter",
+        "price": 2200,
+        "stock": 180,
+        "car_compatibility": ["BMW 3 Series", "Mercedes C-Class"]
+      },
+      {
+        "id": 5,
+        "name": "Headlight Bulb",
+        "category": "Lighting",
+        "brand": "Philips",
+        "price": 2800,
+        "stock": 150,
+        "car_compatibility": ["Audi A4", "Volkswagen Golf"]
+      },
+      {
+        "id": 6,
+        "name": "Car Battery",
+        "category": "Electrical",
+        "brand": "Exide",
+        "price": 14500,
+        "stock": 75,
+        "car_compatibility": ["Ford Mustang", "Chevrolet Camaro"]
+      },
+      {
+        "id": 7,
+        "name": "Alternator",
+        "category": "Electrical",
+        "brand": "Delco Remy",
+        "price": 25000,
+        "stock": 50,
+        "car_compatibility": ["Honda CR-V", "Toyota RAV4"]
+      },
+      {
+        "id": 8,
+        "name": "Radiator",
+        "category": "Cooling System",
+        "brand": "Denso",
+        "price": 18000,
+        "stock": 60,
+        "car_compatibility": ["Subaru Forester", "Hyundai Tucson"]
+      },
+      {
+        "id": 9,
+        "name": "Fuel Pump",
+        "category": "Fuel System",
+        "brand": "Walbro",
+        "price": 11000,
+        "stock": 85,
+        "car_compatibility": ["Mazda CX-5", "Jeep Wrangler"]
+      },
+      {
+        "id": 10,
+        "name": "Timing Belt",
+        "category": "Engine",
+        "brand": "Gates",
+        "price": 7200,
+        "stock": 110,
+        "car_compatibility": ["Nissan Sentra", "Hyundai Elantra"]
+      },
+      {
+        "id": 11,
+        "name": "Shock Absorber",
+        "category": "Suspension",
+        "brand": "Monroe",
+        "price": 13500,
+        "stock": 95,
+        "car_compatibility": ["Toyota Hilux", "Mitsubishi L200"]
+      },
+      {
+        "id": 12,
+        "name": "Clutch Kit",
+        "category": "Transmission",
+        "brand": "Sachs",
+        "price": 28500,
+        "stock": 40,
+        "car_compatibility": ["Ford Ranger", "Nissan Navara"]
+      },
+      {
+        "id": 13,
+        "name": "Side Mirror",
+        "category": "Body Parts",
+        "brand": "Toyota OEM",
+        "price": 9500,
+        "stock": 70,
+        "car_compatibility": ["Toyota Prado", "Land Cruiser"]
+      },
+      {
+        "id": 14,
+        "name": "Wiper Blades",
+        "category": "Accessories",
+        "brand": "Bosch",
+        "price": 2500,
+        "stock": 300,
+        "car_compatibility": ["Volkswagen Passat", "Honda Fit"]
+      },
+      {
+        "id": 15,
+        "name": "Exhaust Muffler",
+        "category": "Exhaust System",
+        "brand": "Borla",
+        "price": 19500,
+        "stock": 55,
+        "car_compatibility": ["Subaru WRX", "Mitsubishi Evo"]
+      }
+    ]
+  }
+  
