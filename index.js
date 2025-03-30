@@ -135,3 +135,68 @@ function addToCart(productId) {
         alert(`Product with ID ${productId} is already in the cart!`);
     }
 }
+async function displayCart() {
+    const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartDiv = document.getElementById('cart-items');
+    cartDiv.innerHTML = '';
+
+    if (cartItems.length === 0) {
+        cartDiv.innerHTML = '<p>Your cart is empty.</p>';
+
+        return;
+    }
+
+    for (const productId of cartItems) {
+        const response = await fetch(`/api/products/${productId}`);
+        const product = await response.json();
+        const itemDiv = document.createElement('div');
+        itemDiv.innerHTML = `
+            <h3>${product.name}</h3>
+            <p>Price: $${product.price.toFixed(2)}</p>
+        `;
+        cartDiv.appendChild(itemDiv);
+    }
+}
+
+
+// Call displayCart when the page loads
+
+document.addEventListener('DOMContentLoaded', async () => {
+    await fetchProducts(); // Fetch products when the page loads
+    await displayCart(); // Display cart items when the page loads
+    document.getElementById('login-btn').addEventListener('click', handleLogin); // Handle login button click
+});
+
+document.getElementById('checkout-button').addEventListener('click', async () => {
+    const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+    if (cartItems.length === 0) {
+        alert('Your cart is empty!');
+        return;
+    }
+
+    // Sending the order to my backend
+
+    const order = {
+        items: cartItems,
+        total: await calculateTotal(cartItems)
+    };
+
+    //  Order placement
+    alert(`Order placed successfully! Total: $${order.total.toFixed(2)}`);
+
+    // Clear the cart
+    localStorage.removeItem('cart');
+    displayCart(); // Refresh the cart display
+
+});
+
+// Function to calculate the total price of items in the cart
+async function calculateTotal(cartItems) {
+    let total = 0;
+    for (const productId of cartItems) {
+        const response = await fetch(`/api/products/${productId}`);
+        const product = await response.json();
+        total += product.price;
+    }
+    return total;
+}
