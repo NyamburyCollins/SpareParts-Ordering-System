@@ -101,3 +101,37 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('login-btn').addEventListener('click', handleLogin); // Handle login button click
 
 });
+function displayProducts(products) {
+    const productList = document.getElementById('product-list');
+    productList.innerHTML = ''; // Remove previous products
+
+    products.forEach(product => {
+
+        const productItem = document.createElement('div');
+        productItem.className = 'product-item';
+        productItem.innerHTML = `
+            <img src="${product.image}" alt="${product.name}" class="product-image">
+            <h3>${product.name}</h3>
+            <p>${product.description}</p>
+            <p>Price: $${product.price.toFixed(2)}</p>
+            <p>Stock: ${product.stock} available</p>
+
+            <button onclick="addToCart('${product._id}')">Add to Cart</button>
+        `;
+
+        productList.appendChild(productItem);
+
+    });
+}
+function addToCart(productId) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    if (!cart.includes(productId)) {
+        cart.push(productId);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        alert(`Product with ID ${productId} added to cart!`);
+
+    } else {
+
+        alert(`Product with ID ${productId} is already in the cart!`);
+    }
+}
