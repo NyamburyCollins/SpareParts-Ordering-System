@@ -25,23 +25,6 @@ async function fetchProducts() {
     }
 }
 
-// Display products in the product list
-function displayProducts(products) {
-    productList.innerHTML = ''; // Clear previous products
-    products.forEach(product => {
-        const productItem = document.createElement('div');
-        productItem.className = 'product-item';
-        productItem.innerHTML = `
-            <h3>${product.name}</h3>
-            <p>${product.description}</p>
-            <p>Price: $${product.price.toFixed(2)}</p>
-            <p>Stock: ${product.stock}</p>
-            <button onclick="addToCart('${product.id}')">Add to Cart</button>
-        `;
-
-        productList.appendChild(productItem);
-    });
-}
 
 // Add to cart
 function addToCart(productId) {
@@ -113,35 +96,69 @@ app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`); // Fixed template literal
 });
 
-import React, { useState } from 'react';
-import { data } from './data.js'; // Assuming data.js exports an array of product objects
+// Sample product data
 
-export default function ProductList() {
-  const [selectedProduct, setSelectedProduct] = useState(null);
-  const handleProductClick = (product) => {
-    setSelectedProduct(product);
-  };
+const products = [
+    { id: 1, name: 'Product 1', description: 'Description for Product 1', price: 10.00 },
+    { id: 2, name: 'Product 2', description: 'Description for Product 2', price: 20.00 },
+    { id: 3, name: 'Product 3', description: 'Description for Product 3', price: 30.00 },
+];
 
-  return (
-    <div>
-      <h1>Product List</h1>
-      <div className="product-list">
-        {data.map((product) => (
-          <div key={product.id} className="product" onClick={() => handleProductClick(product)}>
-            <img src={product.img} alt={product.name} />
-            <h2>{product.name}</h2>
-            <p>${product.price}</p>
-          </div>
-        ))}
-      </div>
-      {selectedProduct && (
-        <div className="product-details">
-          <h2>{selectedProduct.name}</h2>
-          <img src={selectedProduct.img} alt={selectedProduct.name} />
-          <p>{selectedProduct.desc}</p>
-          <p>Price: ${selectedProduct.price}</p>
-        </div>
-      )}
-    </div>
-  );
+// Function to display products
+function displayProducts() {
+    const productList = document.getElementById('product-list');
+    productList.innerHTML = ''; // Clear previous products
+    products.forEach(product => {
+        const productItem = document.createElement('div');
+        productItem.className = 'product';
+        productItem.innerHTML = `
+            <h3>${product.name}</h3>
+            <p>Price: $${product.price.toFixed(2)}</p>
+        `;
+        productItem.addEventListener('click', () => showProductDetails(product));
+        productList.appendChild(productItem);
+    });
 }
+
+// Function to show product details
+function showProductDetails(product) {
+    const productDetails = document.getElementById('product-details');
+    productDetails.innerHTML = `
+        <h2>${product.name}</h2>
+        <p>${product.description}</p>
+        <p>Price: $${product.price.toFixed(2)}</p>
+    `;
+    productDetails.style.display = 'block'; // Show the product details section
+}
+// Initialize the product list when the DOM is loaded
+document.addEventListener('DOMContentLoaded', displayProducts);
+const productDetailsUrl = 'http://localhost:3000/products'; // Adjust this as necessary
+
+// Function to fetch products
+async function fetchProducts() {
+   const response = await fetch(productDetailsUrl);
+   const products = await response.json();
+   return products;
+}
+// Call function to fetch products and render them
+fetchProducts().then(products => {
+   renderProducts(products);
+});
+function renderProducts(products) {
+    const productList = document.getElementById('product-list');
+    products.forEach(product => {
+       const productDiv = document.createElement('div');
+       productDiv.classList.add('product');
+       productDiv.setAttribute('data-id', product.id);
+       productDiv.innerHTML = `
+          <h3>${product.name}</h3>
+          <p>Price: ${product.price}</p>
+       `;
+       productList.appendChild(productDiv);
+       
+       // Add click event for each product
+       productDiv.addEventListener('click', () => {
+          displayProductDetails(product.id);
+       });
+    });
+ }

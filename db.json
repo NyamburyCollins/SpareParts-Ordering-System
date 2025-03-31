@@ -134,7 +134,27 @@
         "price": 19500,
         "stock": 55,
         "car_compatibility": ["Subaru WRX", "Mitsubishi Evo"]
-      }
+      },
+      {
+      "id": 1, 
+      "name": "Oil Filter", 
+      "price": "$50", 
+      "description": "High-performance oil filter for clean engine operation." 
+    },
+           
+    { 
+        "id": 2, 
+        "name": "Engine Oil", 
+        "price": "$30", 
+        "description": "Fully synthetic engine oil for better engine performance." 
+    },
+           
+    { "id": 3, 
+    "name": "Air Filter", 
+    "price": "$20", 
+    "description": "Ensure clean air supply for your engine." 
+}
     ]
-  }
+     }
+    
   
