@@ -25,7 +25,6 @@ async function fetchProducts() {
     }
 }
 
-
 // Add to cart
 function addToCart(productId) {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -162,3 +161,13 @@ function renderProducts(products) {
        });
     });
  }
+ // Function to display the About message
+
+function showAboutMessage() {
+    const aboutMessage = document.getElementById('about-message');
+    aboutMessage.innerHTML = '<p>This is a spare parts ordering system where you can find and order various car parts easily.</p>';
+    aboutMessage.style.display = 'block'; // Show the message
+}
+
+// Add event listener to the About button
+document.getElementById('about-button').addEventListener('click', showAboutMessage);

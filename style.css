@@ -309,7 +309,7 @@ button:hover {
     color: white;
     border: none;
     border-radius: 5px;
-    crsor: pointer;
+    cursor: pointer;
 
 }
 
@@ -394,3 +394,13 @@ button:hover {
     border: 1px solid #ccc;
     padding: 10px;
   }
+
+  .error {
+    color: red;
+    font-weight: bold;
+}
+
+.message {
+    display: none; 
+    margin-top: 20px;
+}
