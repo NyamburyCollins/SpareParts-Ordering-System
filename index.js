@@ -141,8 +141,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 <span class="category">${part.category}</span>
                 <div class="part-name">${part.name}</div>
                 <div><span class="part-brand">${part.brand}</span></div>
-                <div class="part-price">₱${part.price.toLocaleString()}</div>
-                <div class="part-stock in-stock">In Stock: ${part.stock}</div>
+                <div class="part-price">Ksh ${part.price.toLocaleString('en-KE')}</div>
+                <div class="part-stock ${part.stock > 0 ? 'in-stock' : 'out-of-stock'}">
+                    ${part.stock > 0 ? `In Stock: ${part.stock}` : 'Out of Stock'}
+                </div>
                 <div class="compatibility">
                     <div class="compatibility-title">Compatible with:</div>
                     <ul class="compatibility-list">
