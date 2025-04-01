@@ -404,3 +404,146 @@ button:hover {
     display: none; 
     margin-top: 20px;
 }
+
+/* About Page Specific Styles */
+.about-header {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/garage-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.about-header nav {
+    margin-bottom: 30px;
+}
+
+.about-header nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.about-header nav a.active {
+    color: #3498db;
+    border-bottom: 2px solid #3498db;
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.about-section, .mission-section, .team-section, .stats-section {
+    margin-bottom: 60px;
+}
+
+.about-content {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.about-img {
+    width: 50%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.about-text {
+    width: 50%;
+}
+
+.mission-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.mission-card {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.team-members {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.team-member {
+    text-align: center;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.team-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.stat-item {
+    text-align: center;
+    background: #2c3e50;
+    color: white;
+    padding: 30px 20px;
+    border-radius: 8px;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.about-footer {
+    background: #2c3e50;
+    color: white;
+    padding: 50px 0 20px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 0 20px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    margin-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+    }
+    .about-img, .about-text {
+        width: 100%;
+    }
+}
